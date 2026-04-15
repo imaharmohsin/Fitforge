@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".Progress_Tracking">
+    <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/startHorizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.042"/>
+
+<androidx.constraintlayout.widget.Guideline
+    android:id="@+id/startVertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.03"/>
+<androidx.constraintlayout.widget.Guideline
+    android:id="@+id/endVertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.97"/>
+<TextView
+    android:id="@+id/backIcon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:drawableStart="@drawable/back"
+    app:layout_constraintStart_toStartOf="@id/startVertical"
+    app:layout_constraintTop_toTopOf="@id/startHorizontal" />
+<TextView
+    android:id="@+id/tvProgressTracking"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Progress Tracking"
+    android:textStyle="bold"
+    android:textColor="@color/white"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="@id/endVertical"
+    app:layout_constraintStart_toStartOf="@id/startVertical"
+    app:layout_constraintTop_toTopOf="@id/startHorizontal" />
+
+<TextView
+    android:id="@+id/settingIcon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:drawableStart="@drawable/setting"
+    app:layout_constraintEnd_toEndOf="@id/endVertical"
+    app:layout_constraintTop_toTopOf="@id/startHorizontal" />
+
+<com.google.android.material.tabs.TabLayout
+    android:id="@+id/tabView"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:backgroundTint="@color/bg_color"
+    app:tabSelectedTextColor="@color/btn_color"
+    app:tabIndicatorColor="@color/btn_color"
+    app:tabIndicatorFullWidth="true"
+    app:tabTextColor="@color/low_white"
+    app:layout_constraintTop_toBottomOf="@id/backIcon"
+    app:layout_constraintStart_toStartOf="@id/startVertical"
+    app:layout_constraintEnd_toEndOf="@id/endVertical">
+    <com.google.android.material.tabs.TabItem
+        android:id="@+id/itemDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Day"/>
+    <com.google.android.material.tabs.TabItem
+        android:id="@+id/itemWeek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Week"/>
+    <com.google.android.material.tabs.TabItem
+        android:id="@+id/itemMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Month"/>
+</com.google.android.material.tabs.TabLayout>
+
+
+<ScrollView
+    android:layout_width="0dp"
+    android:layout_height="550dp"
+    android:layout_marginTop="20dp"
+    app:layout_constraintTop_toBottomOf="@id/tabView"
+    app:layout_constraintStart_toStartOf="@id/startVertical"
+    app:layout_constraintEnd_toEndOf="@id/endVertical"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvCalories"
+            android:layout_width="170dp"
+            android:layout_height="130dp"
+            app:strokeColor="@color/btn_color"
+            app:cardCornerRadius="25dp"
+            android:backgroundTint="@color/cv_bg_color"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/calories"
+                android:text="  CALORIES"
+                android:padding="20dp"
+                android:textColor="@color/low_white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12,450"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="45dp"
+                android:layout_marginStart="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+8.2% this week"
+                android:textColor="@color/tv_color"
+                android:layout_marginTop="80dp"
+                android:layout_marginStart="20dp"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvWorkoutTime"
+            android:layout_width="170dp"
+            android:layout_height="130dp"
+            app:cardCornerRadius="25dp"
+            app:strokeColor="@color/btn_color"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/cv_bg_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/timer"
+                android:text="  WORKOUT TIME"
+                android:padding="20dp"
+                android:textColor="@color/low_white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12.5"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="45dp"
+                android:layout_marginStart="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+15% vs last week"
+                android:textColor="@color/tv_color"
+                android:layout_marginTop="80dp"
+                android:layout_marginStart="20dp"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ivWorkoutChart"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="25dp"
+            app:cardBackgroundColor="@color/cv_bg_color"
+            app:strokeColor="@color/btn_color"
+            app:layout_constraintTop_toBottomOf="@id/cvCalories"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weekly Activity"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Activity duration by day"
+                    android:textColor="@color/low_white"
+                    app:layout_constraintTop_toBottomOf="@id/tvHeading"
+                    app:layout_constraintStart_toStartOf="@id/tvHeading"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/cv_color"
+                    app:cardCornerRadius="25dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvHeading"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Active Streak: 5 days"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textColor="@color/btn_color"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tvMon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MON"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="100dp"
+                    android:textColor="@color/low_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tvHeading"/>
+
+                <TextView
+                    android:id="@+id/tvWed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WED"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="100dp"
+                    android:textColor="@color/low_white"
+                    android:layout_marginStart="65dp"
+                    app:layout_constraintTop_toTopOf="@id/tvMon"
+                    app:layout_constraintStart_toEndOf="@id/tvMon"/>
+
+                <TextView
+                    android:id="@+id/tvFri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FRI"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="100dp"
+                    android:textColor="@color/low_white"
+                    android:layout_marginStart="65dp"
+                    app:layout_constraintTop_toTopOf="@id/tvWed"
+                    app:layout_constraintStart_toEndOf="@id/tvWed"/>
+
+                <TextView
+                    android:id="@+id/tvSun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SUN"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="100dp"
+                    android:textColor="@color/low_white"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintTop_toTopOf="@id/tvFri"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvTue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TUE"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="100dp"
+                    android:textColor="@color/low_white"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvMon"
+                    app:layout_constraintStart_toStartOf="@id/tvMon"/>
+
+                <TextView
+                    android:id="@+id/tvThu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="THU"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="100dp"
+                    android:textColor="@color/low_white"
+                    app:layout_constraintTop_toTopOf="@id/tvTue"
+                    app:layout_constraintStart_toStartOf="@id/tvWed"/>
+
+                <TextView
+                    android:id="@+id/tvSat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SAT"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="100dp"
+                    android:textColor="@color/low_white"
+                    app:layout_constraintTop_toTopOf="@id/tvTue"
+                    app:layout_constraintStart_toStartOf="@id/tvFri"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvWeightTracking"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="25dp"
+            app:cardCornerRadius="25dp"
+            android:backgroundTint="@color/cv_bg_color"
+            app:strokeColor="@color/btn_color"
+            app:layout_constraintTop_toBottomOf="@id/ivWorkoutChart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvWeightProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weight Progress"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="78.4 kg current weight"
+                    android:textColor="@color/low_white"
+                    app:layout_constraintTop_toBottomOf="@id/tvWeightProgress"
+                    app:layout_constraintStart_toStartOf="@id/tvWeightProgress"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    app:cardCornerRadius="25dp"
+                    android:backgroundTint="@color/cv_color"
+                    android:layout_marginEnd="40dp"
+                    app:layout_constraintTop_toTopOf="@id/tvWeight"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="@color/btn_color"
+                        android:textStyle="bold"/>
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/ivBarLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/vector"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvJan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JAN 15"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginStart="30dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/low_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FEB 01"
+                    android:textStyle="bold"
+                    android:layout_marginStart="40dp"
+                    android:textColor="@color/low_white"
+                    app:layout_constraintTop_toTopOf="@id/tvJan"
+                    app:layout_constraintStart_toEndOf="@id/tvJan" />
+
+                <TextView
+                    android:id="@+id/tvFeb15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FEB 15"
+                    android:textStyle="bold"
+                    android:layout_marginStart="40dp"
+                    android:textColor="@color/low_white"
+                    app:layout_constraintTop_toTopOf="@id/tvFeb"
+                    app:layout_constraintStart_toEndOf="@id/tvFeb" />
+
+                <TextView
+                    android:id="@+id/tvMar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MAR 01"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="40dp"
+                    android:textColor="@color/low_white"
+                    app:layout_constraintTop_toTopOf="@id/tvJan"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvAchievements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Achievements"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/cvWeightTracking"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/tvAchievements"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBadge"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/cv_bg_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/badge"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100 Workouts"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:layout_marginTop="75dp"
+                    android:layout_marginStart="15dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMeter"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/cv_bg_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/meter"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New PR"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:layout_marginTop="75dp"
+                    android:layout_marginStart="33dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCalender"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="25dp"
+                android:backgroundTint="@color/cv_bg_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/calender"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7 Day Streak"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:layout_marginTop="75dp"
+                    android:layout_marginStart="18dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+<!--<androidx.fragment.app.FragmentContainerView-->
+<!--    android:id="@+id/fragmentContainer"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="0dp"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    app:layout_constraintBottom_toTopOf="@id/bottomNav"/>-->
+
+<!--<com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--    android:id="@+id/bottomNav"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:background="@color/bg_color"-->
+<!--    app:itemIconTint="@color/bottom_nav_selector"-->
+<!--    app:itemTextColor="@color/bottom_nav_selector"-->
+<!--    app:itemActiveIndicatorStyle="@style/NoIndicator"-->
+<!--    app:menu="@menu/bottom_menu"-->
+<!--    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"/>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
