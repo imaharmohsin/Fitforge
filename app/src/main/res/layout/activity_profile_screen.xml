@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".Profile_Screen">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.042"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.958"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97"/>
+
+    <TextView
+        android:id="@+id/settingIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:drawableStartCompat="@drawable/setting"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintTop_toTopOf="@id/startHorizontal"/>
+
+    <TextView
+        android:id="@+id/tvProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintTop_toTopOf="@id/startHorizontal"
+        app:layout_constraintEnd_toEndOf="@id/endVertical"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/notificationIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/cv_color"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintTop_toTopOf="@id/startHorizontal"
+        app:layout_constraintEnd_toEndOf="@id/endVertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/notification_bing_svgrepo_com" />
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="665dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toTopOf="@id/startHorizontal"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintEnd_toEndOf="@id/endVertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvProfilePic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="90dp"
+        app:strokeColor="@color/btn_color"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/ivProfilePic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/image"
+            android:scaleType="center"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvFullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alex Forge"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvProfilePic"/>
+
+
+    <TextView
+        android:id="@+id/tvStage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elite Athlete"
+        android:textColor="@color/btn_color"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFullName"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvBtnEditProfile"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/btn_color"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="45dp"
+        app:layout_constraintTop_toBottomOf="@id/tvStage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textStyle="bold"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvWorkout"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="25dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="@color/cv_color"
+        app:layout_constraintTop_toBottomOf="@id/cvBtnEditProfile"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="12"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/btn_color"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WORKOUT"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/low_white"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvFollowers"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="25dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="@color/cv_color"
+        app:layout_constraintTop_toBottomOf="@id/cvBtnEditProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="2.4k"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/btn_color"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FOLLOWERS"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/low_white"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvFollowing"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="25dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="@color/cv_color"
+        app:layout_constraintTop_toBottomOf="@id/cvBtnEditProfile"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="156"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/btn_color"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FOLLOWING"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/low_white"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvFitnessGoals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fitness Goals"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/cvWorkout"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvViewAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View All"
+        android:textColor="@color/btn_color"
+        app:layout_constraintTop_toTopOf="@id/tvFitnessGoals"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvStrengthBuilding"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="20dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="@color/cv_bg_color"
+        app:layout_constraintTop_toBottomOf="@id/tvFitnessGoals"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvDumble"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="15dp"
+                android:backgroundTint="@color/cv_color"
+                android:layout_marginStart="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/dumble"
+                    android:layout_gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvStrengthBuilding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strength Building"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintTop_toTopOf="@id/cvDumble"
+                app:layout_constraintStart_toEndOf="@id/cvDumble"/>
+
+            <ProgressBar
+                android:id="@+id/StrengthProgress"
+                android:layout_width="200dp"
+                android:layout_height="8dp"
+                android:max="180"
+                android:progress="130"
+                android:layout_marginTop="10dp"
+                android:progressDrawable="@drawable/progress_bar_2"
+                style="?android:attr/progressBarStyleHorizontal"
+                app:layout_constraintTop_toBottomOf="@id/tvStrengthBuilding"
+                app:layout_constraintStart_toStartOf="@id/tvStrengthBuilding"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="75%"
+                android:layout_marginEnd="45dp"
+                app:layout_constraintTop_toTopOf="@id/tvStrengthBuilding"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/btn_color"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvMarathonPrep"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="20dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="@color/cv_bg_color"
+        app:layout_constraintTop_toBottomOf="@id/cvStrengthBuilding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvRunning"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="15dp"
+                android:backgroundTint="@color/cv_color"
+                android:layout_marginStart="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/run_svgrepo_com"
+                    android:layout_gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvMarathonPrep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marathon Prep"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintTop_toTopOf="@id/cvRunning"
+                app:layout_constraintStart_toEndOf="@id/cvRunning"/>
+
+            <ProgressBar
+                android:id="@+id/RunningProgress"
+                android:layout_width="200dp"
+                android:layout_height="8dp"
+                android:max="180"
+                android:progress="75"
+                android:layout_marginTop="10dp"
+                android:progressDrawable="@drawable/progress_bar_2"
+                style="?android:attr/progressBarStyleHorizontal"
+                app:layout_constraintTop_toBottomOf="@id/tvMarathonPrep"
+                app:layout_constraintStart_toStartOf="@id/tvMarathonPrep"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40%"
+                android:layout_marginEnd="45dp"
+                app:layout_constraintTop_toTopOf="@id/tvMarathonPrep"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/btn_color"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvRecentBadges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recent Badges"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/cvMarathonPrep"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvBadge1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="45dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="@color/btn_color"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tvRecentBadges"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/badge1"
+            android:layout_gravity="center"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvBadge2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="45dp"
+        app:strokeColor="@color/btn_color"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/cv_bg_color"
+        app:layout_constraintTop_toTopOf="@id/cvBadge1"
+        app:layout_constraintStart_toEndOf="@id/cvBadge1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/badge2"
+            android:layout_gravity="center"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvBadge3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="45dp"
+        app:strokeColor="@color/btn_color"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/cv_bg_color"
+        app:layout_constraintTop_toTopOf="@id/cvBadge2"
+        app:layout_constraintStart_toEndOf="@id/cvBadge2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/badge3"
+            android:layout_gravity="center"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvLock"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="45dp"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/cv_bg_color"
+        app:layout_constraintTop_toTopOf="@id/cvBadge3"
+        app:layout_constraintStart_toEndOf="@id/cvBadge3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/lock"
+            android:layout_gravity="center"/>
+    </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/fragmentContainer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/bottomNav"/>-->
+
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottomNav"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/bg_color"-->
+<!--        app:itemIconTint="@color/bottom_nav_selector"-->
+<!--        app:itemTextColor="@color/bottom_nav_selector"-->
+<!--        app:itemActiveIndicatorStyle="@style/NoIndicator"-->
+<!--        app:menu="@menu/bottom_menu"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

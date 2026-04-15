@@ -2,8 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="low_white">#A0FFFFFF</color>
     <color name="bg_color">#0F2123</color>
     <color name="btn_color">#01E1FF</color>
-    <color name="light">#94A3B8</color>
-    <color name="inner">#00E1FF</color>
+    <color name="cv_bg_color">#16242E</color>
+    <color name="tv_color">#10B981</color>
+    <color name="cv_color">#133D4A</color>
+
 </resources>

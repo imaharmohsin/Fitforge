@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".Setting_Screen">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.042"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.958"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/back"
+        app:layout_constraintTop_toTopOf="@id/startHorizontal"
+        app:layout_constraintStart_toStartOf="@id/startVertical"/>
+
+    <TextView
+        android:id="@+id/tvSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="@id/startHorizontal"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintEnd_toEndOf="@id/endVertical"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvProfilePic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="90dp"
+        app:strokeColor="@color/btn_color"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSetting"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintEnd_toEndOf="@id/endVertical">
+
+        <ImageView
+            android:id="@+id/ivProfilePic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/user_profile"
+            android:scaleType="center"/>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/tvFullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alex Forge"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintEnd_toEndOf="@id/endVertical"
+        app:layout_constraintTop_toBottomOf="@id/cvProfilePic"/>
+
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pro Member since 2023"
+        android:textColor="@color/low_white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintEnd_toEndOf="@id/endVertical"
+        app:layout_constraintTop_toBottomOf="@id/tvFullName"/>
+
+    <TextView
+        android:id="@+id/tvPreferences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preferences"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/tvDate"
+        app:layout_constraintStart_toStartOf="@id/startVertical"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvNotification"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="15dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="@color/cv_bg_color"
+        app:layout_constraintTop_toBottomOf="@id/tvPreferences"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintEnd_toEndOf="@id/endVertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvNotificationIcon"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="15dp"
+                android:backgroundTint="@color/cv_color"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/notification_bing_svgrepo_com"
+                    android:layout_gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toEndOf="@id/cvNotificationIcon"
+                app:layout_constraintTop_toTopOf="@id/cvNotificationIcon"/>
+
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:showText="false"
+                android:layout_marginEnd="20dp"
+                app:thumbTint="@color/switch_thumb"
+                app:trackTint="@color/switch_track"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvDarkMode"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="10dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="@color/cv_bg_color"
+        app:layout_constraintTop_toBottomOf="@id/mcvNotification"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintEnd_toEndOf="@id/endVertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMoonIcon"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="15dp"
+                android:backgroundTint="@color/cv_color"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/dark_mode"
+                    android:layout_gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dark Mode"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toEndOf="@id/cvMoonIcon"
+                app:layout_constraintTop_toTopOf="@id/cvMoonIcon"/>
+
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchToggle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:showText="false"
+                android:layout_marginEnd="20dp"
+                app:thumbTint="@color/switch_thumb"
+                app:trackTint="@color/switch_track"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvUnits"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="10dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="@color/cv_bg_color"
+        app:layout_constraintTop_toBottomOf="@id/mcvDarkMode"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintEnd_toEndOf="@id/endVertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvUnitIcon"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="15dp"
+                android:backgroundTint="@color/cv_color"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/unit"
+                    android:layout_gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Units"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@id/cvUnitIcon"
+                app:layout_constraintTop_toTopOf="@id/cvUnitIcon"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Metric (kg)"
+                android:textColor="@color/low_white"
+                app:layout_constraintTop_toBottomOf="@id/tvUnit"
+                app:layout_constraintStart_toStartOf="@id/tvUnit"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/next"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toTopOf="@id/cvUnitIcon"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/mcvUnits"
+        app:layout_constraintStart_toStartOf="@id/startVertical"/>
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvPersonalInfo"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="15dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="@color/cv_bg_color"
+        app:layout_constraintTop_toBottomOf="@id/tvAccount"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintEnd_toEndOf="@id/endVertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPerson"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="15dp"
+                android:backgroundTint="@color/cv_color"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/person_icon"
+                    android:layout_gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvPersonalInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal Information"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@id/cvPerson"
+                app:layout_constraintTop_toTopOf="@id/cvPerson"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/next"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toTopOf="@id/cvPerson"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvPrivacy"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="10dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="@color/cv_bg_color"
+        app:layout_constraintTop_toBottomOf="@id/mcvPersonalInfo"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintEnd_toEndOf="@id/endVertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPrivacy"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="15dp"
+                android:backgroundTint="@color/cv_color"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/privacy"
+                    android:layout_gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvPrivacyAndSecurity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Privacy &amp; Security"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@id/cvPrivacy"
+                app:layout_constraintTop_toTopOf="@id/cvPrivacy"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/next"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toTopOf="@id/cvPrivacy"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvLogout"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="10dp"
+        app:strokeColor="@color/btn_color"
+        android:backgroundTint="#1B2325"
+        app:layout_constraintTop_toBottomOf="@id/mcvPersonalInfo"
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        app:layout_constraintEnd_toEndOf="@id/endVertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLogout"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="15dp"
+                android:backgroundTint="#302728"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/logout"
+                    android:layout_gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textColor="#EF4444"
+                android:textSize="17dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@id/cvLogout"
+                app:layout_constraintTop_toTopOf="@id/cvLogout"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/next"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toTopOf="@id/cvLogout"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!--            <FrameLayout-->
+    <!--                android:id="@+id/customSwitch"-->
+    <!--                android:layout_width="42dp"-->
+    <!--                android:layout_height="24dp"-->
+    <!--                android:background="@drawable/switch_track"-->
+    <!--                android:padding="3dp"-->
+
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent">-->
+
+    <!--                <View-->
+    <!--                    android:id="@+id/thumb"-->
+    <!--                    android:layout_width="18dp"-->
+    <!--                    android:layout_height="18dp"-->
+    <!--                    android:layout_gravity="start"-->
+    <!--                    android:background="@drawable/switch_thumb"/>-->
+    <!--            </FrameLayout>-->

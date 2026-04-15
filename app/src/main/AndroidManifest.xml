@@ -10,31 +10,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FitForge"
-        tools:ignore="Instantiatable">
+        android:theme="@style/Theme.FitForge">
         <activity
-            android:name=".LoginScreen"
+            android:name=".Workout"
+            android:exported="false" />
+        <activity
+            android:name=".Progress_Tracking"
             android:exported="false" />
         <activity
             android:name=".HomeScreen"
-            android:exported="false" />
-        <activity
-            android:name=".SignUp"
-            android:exported="false" />
-        <activity
-            android:name=".Login"
-            android:exported="false" />
-        <activity
-            android:name=".ThirdOnboarding"
-            android:exported="false" />
-        <activity
-            android:name=".SecondOnboarding"
-            android:exported="false" />
-        <activity
-            android:name=".OnBoarding"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,6 +26,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Setting_Screen"
+            android:exported="false" />
+        <activity
+            android:name=".Profile_Screen"
+            android:exported="false" />
+        <activity
+            android:name=".Diet_Activity"
+            android:exported="false" />
     </application>
 
 </manifest>
