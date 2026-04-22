@@ -38,7 +38,7 @@ public class Login extends AppCompatActivity {
         });
 
         tvJoin.setOnClickListener(v -> {
-            // Add Join navigation here
+
         });
 
         etPhone.addTextChangedListener(new SimpleTextWatcher() {
@@ -89,7 +89,6 @@ public class Login extends AppCompatActivity {
         return true;
     }
 
-    // ✅ Fixed: made static to avoid inner class issues
     public abstract static class SimpleTextWatcher implements TextWatcher {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
