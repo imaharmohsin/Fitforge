@@ -29,12 +29,11 @@ public class LoginScreen extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         tvSkip = findViewById(R.id.skip);
 
-        // ✅ Skip Button
-        tvSkip.setOnClickListener(v -> {
-//            Intent intent = new Intent(LoginScreen.this, HomeScreen.class);
-//            startActivity(intent);
+        tvSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
         });
-
         // ✅ Join Button (Signup Screen open karna ho to)
         tvJoin.setOnClickListener(v -> {
             // Intent intent = new Intent(LoginScreen.this, SignupScreen.class);

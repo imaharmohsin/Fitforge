@@ -32,8 +32,8 @@ public class Login extends AppCompatActivity {
         tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this, HomeScreen.class);
-                startActivity(intent);
+               Intent intent = new Intent(Login.this , HomeScreen.class);
+               start
             }
         });
 
