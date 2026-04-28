@@ -9,4 +9,38 @@
     <color name="tv_color">#10B981</color>
     <color name="cv_color">#133D4A</color>
 
-</resources>
+
+
+
+        <!-- ── Backgrounds ─────────────────────────── -->
+        <color name="colorBackground">#0D1B2A</color>
+        <color name="colorCardDark">#132233</color>
+        <color name="colorCardDarker">#0F1E2E</color>
+        <color name="colorBottomNavBg">#0F1E2E</color>
+
+        <!-- ── Accent Colors ────────────────────────── -->
+        <color name="colorAccentCyan">#00E5FF</color>
+        <color name="colorAccentPurple">#9B59FF</color>
+        <color name="colorAccentTeal">#0D2E3A</color>
+
+        <!-- ── Text Colors ──────────────────────────── -->
+        <color name="colorTextPrimary">#FFFFFF</color>
+        <color name="colorTextSecondary">#8A9BB0</color>
+        <color name="colorGoalText">#9B59FF</color>
+
+        <!-- ── Navigation ───────────────────────────── -->
+        <color name="colorNavActive">#00E5FF</color>
+        <color name="colorNavInactive">#8A9BB0</color>
+
+        <!-- ── Chart ────────────────────────────────── -->
+        <color name="colorChartBar">#00E5FF</color>
+        <color name="colorChartBarAlpha">#3300E5FF</color>
+        <color name="colorChartGrid">#1A2A3A</color>
+
+        <!-- ── Utility ──────────────────────────────── -->
+        <color name="colorDivider">#1A2A3A</color>
+        <color name="colorRipple">#1A00E5FF</color>
+        <color name="colorProgressTrack">#2A2040</color>
+        <color name="colorOverlayDark">#99000000</color>
+
+    </resources>

@@ -1,6 +1,7 @@
 package com.example.fitforge;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -32,13 +33,14 @@ public class Login extends AppCompatActivity {
         tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//               Intent intent = new Intent(Login.this , HomeScreen.class);
-//               start
+                Intent view = new Intent(Login.this , ActivityHomeDashboard.class);
+                startActivity(view);
             }
         });
 
         tvJoin.setOnClickListener(v -> {
-
+            Intent intent = new Intent(Login.this, SignUp.class);
+             startActivity(intent);
         });
 
         etPhone.addTextChangedListener(new SimpleTextWatcher() {
@@ -62,8 +64,6 @@ public class Login extends AppCompatActivity {
             if (!validatePhone(phone) || !validatePassword(password)) {
                 return;
             }
-
-            // Add Sign In logic here
         });
     }
 

@@ -65,9 +65,6 @@ public class LoginScreen extends AppCompatActivity {
                 return;
             }
 
-            // ✅ Agar validation sahi ho to next screen
-//            Intent intent = new Intent(LoginScreen.this, HomeScreen.class);
-//            startActivity(intent);
         });
     }
 
@@ -93,7 +90,7 @@ public class LoginScreen extends AppCompatActivity {
         return true;
     }
 
-    // ✅ Custom TextWatcher
+
     public abstract static class SimpleTextWatcher implements TextWatcher {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
