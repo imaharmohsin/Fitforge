@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/progress_bar_accent.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Track background -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <solid android:color="#222222" />
+            <corners android:radius="3dp" />
+        </shape>
+    </item>
+
+    <!-- Secondary progress (optional) -->
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape android:shape="rectangle">
+                <solid android:color="#2A3800" />
+                <corners android:radius="3dp" />
+            </shape>
+        </clip>
+    </item>
+
+    <!-- Active progress fill — #CCF200 -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <solid android:color="#CCF200" />
+                <corners android:radius="3dp" />
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>

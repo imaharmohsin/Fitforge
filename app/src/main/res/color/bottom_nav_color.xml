@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/color/bottom_nav_color.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Active / selected tab → #CCF200 -->
+    <item
+        android:color="#CCF200"
+        android:state_checked="true" />
+
+    <!-- Inactive tab → muted grey -->
+    <item
+        android:color="#4D4D4D"
+        android:state_checked="false" />
+
+</selector>

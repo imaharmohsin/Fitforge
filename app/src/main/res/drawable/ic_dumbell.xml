@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Left outer plate -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M3,9.5h2v5H3z"/>
+
+    <!-- Left inner plate -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M5.5,7.5h2v9h-2z"/>
+
+    <!-- Bar -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M7.5,11.25h9v1.5h-9z"/>
+
+    <!-- Right inner plate -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16.5,7.5h2v9h-2z"/>
+
+    <!-- Right outer plate -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M19,9.5h2v5h-2z"/>
+
+</vector>
